@@ -132,6 +132,29 @@ st.markdown(f"""
         margin: 1.2rem 0;
         letter-spacing: -0.5px;
     }}
+    /* Sidebar button styling for visibility (enabled + disabled) */
+    [data-testid="stSidebar"] .stButton>button {{
+        color: {text_color} !important;
+        background-color: rgba(255,255,255,0.03) !important;
+        border: 1px solid rgba(255,255,255,0.06) !important;
+        box-shadow: none !important;
+    }}
+    [data-testid="stSidebar"] .stButton>button:hover {{
+        background-color: rgba(88,166,255,0.08) !important;
+        color: {text_color} !important;
+    }}
+    [data-testid="stSidebar"] .stButton>button:disabled,
+    [data-testid="stSidebar"] .stButton>button[disabled] {{
+        color: {text_color} !important;
+        opacity: 0.95 !important;
+        background-color: rgba(255,255,255,0.02) !important;
+    }}
+    /* Ensure button text/icon remains readable when Streamlit wraps content */
+    [data-testid="stSidebar"] .stButton>button span,
+    [data-testid="stSidebar"] .stButton>button svg {{
+        fill: {text_color} !important;
+        color: {text_color} !important;
+    }}
 </style>
 """, unsafe_allow_html=True)
 
